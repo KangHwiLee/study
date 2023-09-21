@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+
+<table class="table board-table">
+    <colgroup>
+        <col width="2%">
+        <col width="60%">
+        <col width="18%">
+        <col width="10%">
+        <col width="10%">
+    </colgroup>
+    <thead>
+    <th>No</th>
+    <th>제목</th>
+    <th>글쓴이</th>
+    <th>등록일</th>
+    <th>수정일</th>
+    </thead>
+    <tbody>
+    <th:block th:each="list : ${boards}">
+    <tr>
+        <td th:text="${list.id}"></td>
+        <td th:text="${list.title}">test</td>
+        <td th:text="${list.writer} == 1 ? '관리자'">test</td>
+        <td th:text="${list.created_at}">test</td>
+        <td th:text="${list.updated_at}">test</td>
+    </tr>
+    <tr>
+        <td colspan="5" style=" border-top:0px;display:none">
+        <textarea th:text="${list.content}" type="text" class="form-control" maxlength="1024" style="display:none;height:auto;" readonly></textarea>
+        </td>
+    </tr>
+    </th:block>
+    </tbody>
+</table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item" th:classappend="${1 == boards.Pageable.PageNumber + 1} ? 'disabled'">
+            <a class="page-link" th:href="|javascript:board_list(1)|">Previous</a>
+        </li>
+        <li class="page-item" th:classappend="${i == boards.Pageable.PageNumber + 1} ? 'disabled'"
+            th:each="i : ${#numbers.sequence(startPage, endPage)}">
+            <a class="page-link" href="#" th:text="${i}"></a>
+        </li>
+        <li class="page-item" th:classappend="${boards.totalPages == boards.Pageable.PageNumber + 1} ? 'disabled'">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:replace="fragments/fragment::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</header>
+<!--<jsp:include page="/WEB-INF/views/include/head.jsp"/>-->
+
+<body id="page-top">
+<th:block th:fragment="snow">
+<div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+    <h6 class="m-0 font-weight-bold text-primary" th:text="스노우멜트"></h6>
+    <div class="dropdown no-arrow">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+             aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-header">Dropdown Header:</div>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+</div>
+<!-- Card Body -->
+<div class="card-body">
+    <div class="board" >
+        <p>스노우멜트모니터링서비스</p>
+        <p>개발기간 : 2022-02 ~ 2022-08</p>
+        <p>개발인원 : 2명</p>
+
+    </div>
+</div>
+
+</th:block>
+<th:block th:fragment="air">
+<div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+    <h6 class="m-0 font-weight-bold text-primary" th:text="스노우멜트"></h6>
+    <div class="dropdown no-arrow">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+             aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-header">Dropdown Header:</div>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+</div>
+<!-- Card Body -->
+<div class="card-body">
+    <div class="board" >
+        <p th:text="${pft}"></p>
+
+
+    </div>
+</div>
+
+</th:block>
+</body>
+
+</html>
